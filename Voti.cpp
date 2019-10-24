@@ -40,7 +40,7 @@ int ordinamento_ingenuo(int v[], int len)
 		}
 	}
 	
-	cout << "vettore random: " << endl;
+	cout << "vettore ordinato: " << endl;
 	for (int i=0; i<len; i++)
 	{
 		cout << v[i] << " / ";
@@ -49,19 +49,18 @@ int ordinamento_ingenuo(int v[], int len)
 }
 
 //creazione di un vettore con elementi random
-int rand_vett(int numero)
+int rand_vett(int len, int min, int max)
 {
-	cout << "vettore ordinato:" << endl;
-	int vettore[numero];
-	cout << "lista:" << endl;
-	for (int i=0; i<numero; i++)
+	cout << "vettore random:" << endl;
+	int vettore[len];
+	for (int i=0; i<len; i++)
 	{
-		vettore[i] = random(0,10);
+		vettore[i] = random(min,max);
 		cout << vettore[i] << " / ";
 		
 	}
 	cout << endl;
-	ordinamento_ingenuo(vettore, numero);
+	ordinamento_ingenuo(vettore, len);
 }
 
 int main()
@@ -69,6 +68,18 @@ int main()
 	//inizializzazione dei millisecondi
 	srand(time (NULL));
 	
+	int len, max, min;
+	
+	cout << "\nInserire la lunghezza del vettore: ";
+	cin >> len;
+	cout << "\nInserire il numero random minimo: ";
+	cin >> min;
+	cout << "\nInserire il numero random massimo: ";
+	cin >> max;
+	cout << endl;
+	
 	//si crea e si ordina un  vettore di x elementi
-	rand_vett(15);
+	rand_vett(len, min, max);
+	
+	//si cerca un elemento nel vettore
 }
