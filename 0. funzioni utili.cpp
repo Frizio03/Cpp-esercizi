@@ -15,7 +15,7 @@ int random(int n1, int n2)
 }
 
 //funzione per scambiare 2 variabili
-int scambia(int a, int b)
+int scambia(int &a, int &b)
 {
 	int box = a;
 	a = b;
