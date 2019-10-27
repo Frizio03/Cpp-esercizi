@@ -48,6 +48,22 @@ int ordinamento_ingenuo(int v[], int len)
 	cout << endl;
 }
 
+// ricerca elemento all'interno di un vettore
+bool cerca(int v[], int elemento, int len)
+{
+	int count=0, trovato, i=0, f=len-1, m;
+	while(trovato != elemento || i<=f || f>=i)
+	{
+		m = (i+f)/2;
+		if (v[m] > elemento)
+			f = m - 1;
+		else if (v[m] < elemento)
+			i = m + 1;
+		else if (v[m] == elemento)
+			return true;
+	}
+}
+
 //creazione di un vettore con elementi random
 int rand_vett(int len, int min, int max)
 {
@@ -59,8 +75,12 @@ int rand_vett(int len, int min, int max)
 		cout << vettore[i] << " / ";
 		
 	}
-	cout << endl;
+	cout << endl << endl;
 	ordinamento_ingenuo(vettore, len);
+	int cercato;
+	cout << "\nInserire il numero da cercare: ";
+	cin >> cercato;
+	cerca(vettore, cercato, len);
 }
 
 int main()
@@ -80,6 +100,5 @@ int main()
 	
 	//si crea e si ordina un  vettore di x elementi
 	rand_vett(len, min, max);
-	
 	//si cerca un elemento nel vettore
 }
