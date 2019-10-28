@@ -51,8 +51,8 @@ int ordinamento_ingenuo(int v[], int len)
 // ricerca elemento all'interno di un vettore
 bool cerca(int v[], int elemento, int len)
 {
-	int count=0, trovato, i=0, f=len-1, m;
-	while(trovato != elemento || i<=f || f>=i)
+	int count=1, i=0, f=len-1, m;
+	while(i<=f)
 	{
 		m = (i+f)/2;
 		if (v[m] > elemento)
@@ -60,8 +60,16 @@ bool cerca(int v[], int elemento, int len)
 		else if (v[m] < elemento)
 			i = m + 1;
 		else if (v[m] == elemento)
+		{
+			cout << "Il numero " << elemento << " trovato in " << count << " passaggi" << endl;
 			return true;
+		}
+		count += 1;
 	}
+	
+	cout << "Il numero " << elemento << " NON viene trovato nel vettore" << endl;
+	return false;
+	
 }
 
 //creazione di un vettore con elementi random
