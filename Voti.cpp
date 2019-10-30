@@ -72,6 +72,35 @@ bool cerca(int v[], int elemento, int len)
 	
 }
 
+int bubbleSort(int v[], int len) 
+{ 
+   int i, j; 
+   bool swapped; 
+   for (i = 0; i < len-1; i++) 
+   { 
+     swapped = false; 
+     for (j = 0; j < len-i-1; j++) 
+     { 
+        if (v[j] > v[j+1]) 
+        { 
+           scambia(v[j], v[j+1]); 
+           swapped = true; 
+        } 
+     } 
+  
+     // IF no two elements were swapped by inner loop, then break 
+     if (swapped == false) 
+        break; 
+   } 
+   
+   cout << "vettore ordinato: " << endl;
+	for (int i=0; i<len; i++)
+	{
+		cout << v[i] << " / ";
+	}
+	cout << endl;
+}
+
 //creazione di un vettore con elementi random
 int rand_vett(int len, int min, int max)
 {
@@ -84,7 +113,7 @@ int rand_vett(int len, int min, int max)
 		
 	}
 	cout << endl << endl;
-	ordinamento_ingenuo(vettore, len);
+	bubbleSort(vettore, len);
 	int cercato;
 	cout << "\nInserire il numero da cercare: ";
 	cin >> cercato;
