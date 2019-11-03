@@ -10,8 +10,9 @@ int y=1;
 string s = "";
 
 /*definizione puntatori
-	* --> deferenziatore
-	& --> referenziatore       */
+	* --> deferenziatore --> mostra il valore di una variabile
+	& --> referenziatore --> mostra l'indirizzo di una variabile
+*/
 int *px = &x;	//puntatore p su indirizzo memoria x
 int *px2 = px;	//puntamento di un puntatore --> i due puntatori puntano la stessa variabile
 
