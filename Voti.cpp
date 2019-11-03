@@ -71,25 +71,56 @@ bool cerca(int v[], int elemento, int len)
 	return false;
 	
 }
+/*
+int bubbleSort(int v[], int len) 
+{  
+   bool ordinato; 
+   while (!ordinato && len > 1) 
+   { 
+     ordinato = false; 
+     for (int j = 0; j < len-1; j++) 
+     { 
+        if (v[j] > v[j+1]) 
+        { 
+           scambia(v[j], v[j+1]); 
+           ordinato = true; 
+        } 
+        
+		// IF no two elements were swapped by inner loop, then break 
+    	if (ordinato == false) 
+        	break; 
+     } 
+  
+    len--;
+   } 
+
+   cout << "vettore ordinato: " << endl;
+	for (int i=0; i<len; i++)
+	{
+		cout << v[i] << " / ";
+	}
+	cout << endl;
+}
+*/
 
 int bubbleSort(int v[], int len) 
 { 
    int i, j; 
-   bool swapped; 
+   bool ordinato; 
    for (i = 0; i < len-1; i++) 
    { 
-     swapped = false; 
+     ordinato = false; 
      for (j = 0; j < len-i-1; j++) 
      { 
         if (v[j] > v[j+1]) 
         { 
            scambia(v[j], v[j+1]); 
-           swapped = true; 
+           ordinato = true; 
         } 
      } 
   
      // IF no two elements were swapped by inner loop, then break 
-     if (swapped == false) 
+     if (ordinato == false) 
         break; 
    } 
    
