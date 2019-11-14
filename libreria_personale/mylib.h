@@ -31,6 +31,13 @@ int ordinamento_ingenuo(int v[], int len)
 				scambia(v[i], v[j]);
 		}
 	}
+	
+	cout << "vettore ordinato: " << endl;
+	for (int i=0; i<len; i++)
+	{
+		cout << v[i] << " / ";
+	}
+	cout << endl;
 }
 
 //bubble sort di ordinamento vettore di int
@@ -56,6 +63,32 @@ int bubbleSort(int v[], int len)
    } 
    
    cout << "vettore ordinato: " << endl;
+	for (int i=0; i<len; i++)
+	{
+		cout << v[i] << " / ";
+	}
+	cout << endl;
+}
+
+//Ordinamento per bubbleSort con SENTINELLA
+int bubbleSort_sentinella(int v[], int len) 
+{ 
+   int i; 
+   bool ordinato; 
+   do { 
+     ordinato = false; 
+     for (i = 0; i < len-1; i++) 
+     { 
+        if (v[i] > v[i+1]) 
+        { 
+           scambia(v[i], v[i+1]); 
+           ordinato = true; 
+        } 
+     } 
+  
+   }while(ordinato==true);
+   
+   	cout << "vettore ordinato: " << endl;
 	for (int i=0; i<len; i++)
 	{
 		cout << v[i] << " / ";
