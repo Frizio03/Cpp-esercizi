@@ -1,7 +1,7 @@
 // Autore: Fabrizio Tedeschi
 
 /*
-il programma crea un vettore di 15 elementi random
+il programma crea un vettore di x elementi random
 il vettore viene riordinato
 si cerca uno specifico numero dentro al vettore
 */
@@ -40,7 +40,7 @@ int ordinamento_ingenuo(int v[], int len)
 		}
 	}
 	
-	cout << "vettore ordinato: " << endl;
+	cout << "vettore ordinato ingenuamente: " << endl;
 	for (int i=0; i<len; i++)
 	{
 		cout << v[i] << " / ";
@@ -71,60 +71,26 @@ bool cerca(int v[], int elemento, int len)
 	return false;
 	
 }
-/*
-int bubbleSort(int v[], int len) 
-{  
-   bool ordinato; 
-   while (!ordinato && len > 1) 
-   { 
-     ordinato = false; 
-     for (int j = 0; j < len-1; j++) 
-     { 
-        if (v[j] > v[j+1]) 
-        { 
-           scambia(v[j], v[j+1]); 
-           ordinato = true; 
-        } 
-        
-		// IF no two elements were swapped by inner loop, then break 
-    	if (ordinato == false) 
-        	break; 
-     } 
-  
-    len--;
-   } 
 
-   cout << "vettore ordinato: " << endl;
-	for (int i=0; i<len; i++)
-	{
-		cout << v[i] << " / ";
-	}
-	cout << endl;
-}
-*/
-
-int bubbleSort(int v[], int len) 
+// bubble sort con sentinella
+int bubbleSort_sentinella(int v[], int len) 
 { 
-   int i, j; 
+   int i; 
    bool ordinato; 
-   for (i = 0; i < len-1; i++) 
-   { 
+   do { 
      ordinato = false; 
-     for (j = 0; j < len-i-1; j++) 
+     for (i = 0; i < len-1; i++) 
      { 
-        if (v[j] > v[j+1]) 
+        if (v[i] > v[i+1]) 
         { 
-           scambia(v[j], v[j+1]); 
+           scambia(v[i], v[i+1]); 
            ordinato = true; 
         } 
      } 
   
-     // IF no two elements were swapped by inner loop, then break 
-     if (ordinato == false) 
-        break; 
-   } 
+   }while(ordinato==true);
    
-   cout << "vettore ordinato: " << endl;
+   cout << "vettore ordinato con BubbleSort sentinella: " << endl;
 	for (int i=0; i<len; i++)
 	{
 		cout << v[i] << " / ";
@@ -144,7 +110,9 @@ int rand_vett(int len, int min, int max)
 		
 	}
 	cout << endl << endl;
-	bubbleSort(vettore, len);
+	ordinamento_ingenuo(vettore, len);
+	cout << endl;
+	bubbleSort_sentinella(vettore, len);
 	int cercato;
 	cout << "\nInserire il numero da cercare: ";
 	cin >> cercato;

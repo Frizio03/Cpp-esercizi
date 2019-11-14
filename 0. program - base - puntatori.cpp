@@ -57,6 +57,7 @@ int main()
 	cout << "mostro il valore di x: " << x << endl;
 	cout << "mostro il valore puntato da px: " << *px << endl;
 	cout << "mostro l'indirizzo della variabile puntata da px (=px)': " << &(*px) << endl;
+	cout << "mostro l'indirizzo di px: " << &px << endl;
 	cout << "mostro il valore puntato da px2: " << *px2 << endl;
 	
 	//utilizzo puntatori per modifica variabili
