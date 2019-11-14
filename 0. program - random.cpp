@@ -16,7 +16,7 @@ int random(int n1, int n2)
 
 int main()
 {
-	//inizializzazione dei millisecondi
+	//inizializzazione dei secondi dal 01/01/1974
 	srand(time (NULL));
 	
 	//random tra 0 e un numero n

@@ -9,7 +9,7 @@ using namespace std;
 //funzione principale che decreta l'inizio del programma
 int main()
 {
-	//definizione del vector v
+	//definizione del vector v con notazione a diamante <...>
 	vector<int> v;
 	//aggiunta di un elemento
 	v.push_back(10);
