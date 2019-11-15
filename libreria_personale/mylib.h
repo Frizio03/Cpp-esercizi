@@ -183,3 +183,102 @@ bool ricerca_binaria_float(float v[], float elemento, int len)
 	cout << "Il numero " << elemento << " NON viene trovato nel vettore" << endl;
 	return false;
 }
+
+//resituisce il numero maggiore di un vettore int
+int vmaggiore_int(int v[], int len)
+{
+	int vmax=v[0];
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]>vmax)
+			vmax = v[i];
+	}
+	return vmax;
+}
+
+//resituisce il numero maggiore di un vettore float
+float vmaggiore_float(float v[], int len)
+{
+	float vmax=v[0];
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]>vmax)
+			vmax = v[i];
+	}
+	return vmax;
+}
+
+//resituisce il numero maggiore di un vettore int
+int vminore_int(int v[], int len)
+{
+	int vmin=v[0];
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]<vmin)
+			vmin = v[i];
+	}
+	return vmin;
+}
+
+//resituisce il numero maggiore di un vettore float
+float vminore_float(float v[], int len)
+{
+	float vmin=v[0];
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]<vmin)
+			vmin = v[i];
+	}
+	return vmin;
+}
+
+//restituisce la media degli elementi del vettore int
+int vmedia_int(int v[], int len)
+{
+	int somma=0;
+	for (int i=0; i<len; i++)
+	{
+		somma += v[i];
+	}
+	return somma/len;
+}
+
+//restituisce la media degli elementi del vettore int
+float vmedia_float(float v[], int len)
+{
+	float somma=0;
+	for (int i=0; i<len; i++)
+	{
+		somma += v[i];
+	}
+	return somma/len;
+}
+
+bool ricerca_int(int v[], int find, int len)
+{
+	for (int i=0; i<len; i++)
+	{
+		if (v[i]==find)
+		{
+			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
+			return true;
+		}
+	}
+		cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
+		return false;
+}
+
+bool ricerca_float(float v[], float find, int len)
+{
+	for (int i=0; i<len; i++)
+	{
+		if (v[i]==find)
+		{
+			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
+			return true;
+		}
+	}
+	
+	cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
+	return false;
+}
