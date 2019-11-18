@@ -345,11 +345,11 @@ bool ricerca_float(float v[], float find, int len)
 	return false;
 }
 
-void reverse_int(int v[], len)
+void reverse_int(int v[], int len)
 {
 	int mezzo=len/2;
 	for (int i=0; i<mezzo; i++)
 	{
-		scambia(v[i], v[len-i-1]);
+		scambia_int(v[i], v[len-i-1]);
 	}
 }
