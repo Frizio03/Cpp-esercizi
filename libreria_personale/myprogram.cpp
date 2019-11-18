@@ -44,9 +44,13 @@ int main()
 	cout << "\n-----------------------------------------------------" << endl;
 	
 	cout << "\nIl minore degli INT: " << vminore_int(Vint, len) << endl;
+	cout << "Indice del minore degli INT: " << index_vminore_int(Vint, len) << endl;
 	cout << "Il maggiore degli INT: " << vmaggiore_int(Vint, len) << endl;
+	cout << "Indice del maggiore degli INT: " << index_vmaggiore_int(Vint, len) << endl;
 	cout << "Il minore dei FLOAT: " << vminore_float(Vfloat, len) << endl;
+	cout << "Indice del minore dei FLOAT: " << index_vminore_float(Vfloat, len) << endl;
 	cout << "Il maggiore dei FLOAT: " << vmaggiore_float(Vfloat, len) << endl;
+	cout << "Indice del maggiore dei FLOAT: " << index_vmaggiore_float(Vfloat, len) << endl;
 	cout << endl;
 	cout << "La media degli INT: " << vmedia_int(Vint, len) << endl;
 	cout << "La media dei FLOAT: " << vmedia_float(Vfloat, len) << endl;

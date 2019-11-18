@@ -215,8 +215,10 @@ int index_vmaggiore_int(int v[], int len)
 	for (int i = 0; i < len; i++)
 	{
 		if (v[i]>vmax)
+		{
 			vmax = v[i];
 			index=i;
+		}
 	}
 	return index;
 }
@@ -229,8 +231,10 @@ float index_vmaggiore_float(float v[], int len)
 	for (int i = 0; i < len; i++)
 	{
 		if (v[i]>vmax)
+		{
 			vmax = v[i];
 			index=i;
+		}
 	}
 	return index;
 }
@@ -266,8 +270,10 @@ int index_vminore_int(int v[], int len)
 	for (int i = 0; i < len; i++)
 	{
 		if (v[i]<vmin)
+		{
 			vmin = v[i];
 			index=i;
+		}
 	}
 	return index;
 }
@@ -280,8 +286,10 @@ float index_vminore_float(float v[], int len)
 	for (int i = 0; i < len; i++)
 	{
 		if (v[i]<vmin)
+		{
 			vmin = v[i];
 			index=i;
+		}
 	}
 	return index;
 }
