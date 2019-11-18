@@ -344,3 +344,12 @@ bool ricerca_float(float v[], float find, int len)
 	cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
 	return false;
 }
+
+void reverse_int(int v[], len)
+{
+	int mezzo=len/2;
+	for (int i=0; i<mezzo; i++)
+	{
+		scambia(v[i], v[len-i-1]);
+	}
+}
