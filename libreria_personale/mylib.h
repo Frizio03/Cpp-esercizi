@@ -208,6 +208,60 @@ float vmaggiore_float(float v[], int len)
 	return vmax;
 }
 
+//resituisce l'indice del numero maggiore di un vettore int
+int index_vmaggiore_int(int v[], int len)
+{
+	int vmax=v[0], index=0;
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]>vmax)
+			vmax = v[i];
+			index=i;
+	}
+	return index;
+}
+
+//resituisce l'indice del numero maggiore di un vettore float
+float index_vmaggiore_float(float v[], int len)
+{
+	float vmax=v[0];
+	int index=0;
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]>vmax)
+			vmax = v[i];
+			index=i;
+	}
+	return index;
+}
+
+//resituisce l'indice del numero minore di un vettore int
+int index_vminore_int(int v[], int len)
+{
+	int vmax=v[0], index=0;
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]<vmax)
+			vmax = v[i];
+			index=i;
+	}
+	return index;
+}
+
+//resituisce l'indice del numero minore di un vettore float
+float index_vmaggiore_float(float v[], int len)
+{
+	float vmax=v[0];
+	int index=0;
+	for (int i = 0; i < len; i++)
+	{
+		if (v[i]<vmax)
+			vmax = v[i];
+			index=i;
+	}
+	return index;
+}
+
 //resituisce il numero maggiore di un vettore int
 int vminore_int(int v[], int len)
 {
