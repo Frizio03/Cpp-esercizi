@@ -316,35 +316,34 @@ float vmedia_float(float v[], int len)
 	return somma/len;
 }
 
-bool ricerca_int(int v[], int find, int len)
+int ricerca_int(int v[], int find, int len)
 {
 	for (int i=0; i<len; i++)
 	{
 		if (v[i]==find)
 		{
 			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
-			return true;
+			return i;
 		}
 	}
 		cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
-		return false;
 }
 
-bool ricerca_float(float v[], float find, int len)
+int ricerca_float(float v[], float find, int len)
 {
 	for (int i=0; i<len; i++)
 	{
 		if (v[i]==find)
 		{
 			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
-			return true;
+			return i;
 		}
 	}
 	
 	cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
-	return false;
 }
 
+// gira al contrario un vettore di int
 void reverse_int(int v[], int len)
 {
 	int mezzo=len/2;
@@ -352,4 +351,36 @@ void reverse_int(int v[], int len)
 	{
 		scambia_int(v[i], v[len-i-1]);
 	}
+}
+
+// gira al contarrio un vettore di float
+void reverse_float(float v[], int len)
+{
+	int mezzo=len/2;
+	for (int i=0; i<mezzo; i++)
+	{
+		scambia_float(v[i], v[len-i-1]);
+	}
+}
+
+// elimina un elemento dal vettore int
+void elimina_int(int v[], int elem, int len)
+{
+	int index = ricerca_int(v, elem, len);
+	for (int i=index; i<len; i++)
+	{
+		v[i]=v[i+1];
+	}
+	v[len-1]=0;
+}
+
+// elimina un elemento dal vettore float
+void elimina_float(float v[], float elem, int len)
+{
+	int index = ricerca_float(v, elem, len);
+	for (int i=index; i<len; i++)
+	{
+		v[i]=v[i+1];
+	}
+	v[len-1]=0;
 }

@@ -6,14 +6,14 @@ using namespace std;
 
 int main()
 {
-	int len;
+	int len, eliminaint;
 	cout << "Scrivere la lunghezza dei vettori: ";
 	cin >> len; cout << endl;
 	
 	srand(time(NULL));
 	
 	int min, max, Vint[len], findint;
-	float minf, maxf, Vfloat[len], findfloat;
+	float minf, maxf, Vfloat[len], findfloat, eliminafloat;
 	
 	cout << "Scrivere il numero minimo del vettore INT: ";
 	cin >> min; cout << endl;
@@ -32,6 +32,13 @@ int main()
 	
 	riempi_vettore_random_int(Vint, len, min, max);
 	riempi_vettore_random_float(Vfloat, len, minf*10, maxf*10);
+	
+	stampa_vettore_int(Vint, len);
+	stampa_vettore_float(Vfloat, len);
+	
+	cout << "\nINVERSIONE:" << endl;
+	reverse_int(Vint, len);
+	reverse_float(Vfloat, len);
 	
 	stampa_vettore_int(Vint, len);
 	stampa_vettore_float(Vfloat, len);
@@ -72,4 +79,17 @@ int main()
 	
 	ricerca_binaria_int(Vint, findint, len);
 	ricerca_binaria_float(Vfloat, findfloat, len);
+	
+	cout << "\n-----------------------------------------------------" << endl;
+	
+	cout << "Scrivere il numero da ELIMINARE dal vettore INT: ";
+	cin >> eliminaint; cout << endl;
+	cout << "Scrivere il numero da ELIMINARE dal vettore FLOAT: ";
+	cin >> eliminafloat; cout << endl;
+	
+	elimina_int(Vint, eliminaint, len);
+	elimina_float(Vfloat, eliminafloat, len);
+	stampa_vettore_int(Vint, len);
+	stampa_vettore_float(Vfloat, len);
+	
 }
