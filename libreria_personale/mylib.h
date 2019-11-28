@@ -3,17 +3,111 @@
 #include <cstdlib>
 using namespace std;
 
-//funzione random int
-int random_int(int n1, int n2)
+//**PROTOTIPI**
+//Gestione random:
+int randomNM(int n, int m);
+float randomNM_float(int n, int m);
+int random0N(int n);
+float random0N_float(int n);
+void setRandomMin(int min);
+void setRandomMax(int max);
+//Gestione vettore:
+void setDimensioneMax(int x)
+void riempiVettore(int v[], int n);
+void riempiVettore(float v[], int n);
+void riempiVettoreRandom(int v[], int n);
+void riempiVettoreRandom(float v[], int n);
+bool aggiungiElemento(int v[], int n, int x);
+bool aggiungiElemento(float v[], int n, float x);
+void rimuoviElemento(int v[], int n, int pos);
+void rimuoviElemento(float v[], int n, int pos);
+//Stampa del vettore
+void stampaVettore(float v[], int n);
+void stampaVettore(int v[], int n);
+//Algoritmi dei vettori
+void ordinamentoIngenuo(int v[], int n, bool inverso);
+void ordinamentoIngenuo(int v[], int n, bool inverso);	
+void bubbleSort(int v[], int n, bool inverso);
+void bubbleSort(float v[], int n, bool inverso);
+//Funzioni sui vettori
+int sommaVettore(int v[], int n);
+float sommaVettore(float v[], int n);
+float media(int v[], int n);
+float media(float v[], int n);
+void inverti(int v[], int n);
+void inverti(float v[], int n);
+bool ricercaBinaria(int v[], int n, int x);
+bool ricercaBinaria(float v[], int n, int x);
+int presente(int v[], int n, int x);
+int presente(float v[], int n, float x);
+int minore(int v[], int n)
+float minore(float v[], int n)
+int maggiore(int v[], int n)
+float maggiore(float v[], int n)
+int posizioneMinore(int v[], int n)
+int posizioneMinore(float v[], int n)
+int posizioneMaggiore(int v[], int n)
+int posizioneMaggiore(float v[], int n)
+
+//DEFINIZIONE VARIABILI
+bool random_inizializzato = false;
+int random_min = 0; random_max = 100, len = 1000;
+
+//**GESTIONE DEL RANDOM**
+
+void setRandomMin(int min)
 {
+	random_min = min;
+}
+
+void setRandomMax(int max)
+{
+	random_max = max;
+}
+
+//funzioni random da 0 a max
+int random0N(int n)
+{
+	if (random_inizializzato == false)
+	{
+		srand(time(NULL));
+		random_inizializzato = true;
+	}
+	return rand() % n;
+}
+
+//funzione random da 0 a max
+float randomo0N_float(int n)
+{
+	if (random_inizializzato == false)
+	{
+		srand(time(NULL));
+		random_inizializzato = true;
+	}
+	return (float) (rand() % n) + (rand() % n)/100;
+}
+
+//funzione random int tra min e max
+int randomNM(int n1, int n2)
+{
+	if (random_inizializzato == false)
+	{
+		srand(time(NULL));
+		random_inizializzato = true;
+	}
 	return rand() % (n1-n2+1)+n1;
 }
 
-//funzione random float
-float random_float(int n1, int n2)
+//funzione random float tra min e max
+float randomNM_float(int n1, int n2)
 {
+	if (random_inizializzato == false)
+	{
+		srand(time(NULL));
+		random_inizializzato = true;
+	}
 	int v1 = rand() % (n1-n2+1)+n1;
-	return (float)v1/10;
+	return (float)v1/100;
 }
 
 //funzione per scambiare 2 variabili int
@@ -32,29 +126,87 @@ void scambia_float(float &a, float &b)
 	b = box;
 }
 
-//creazione di un vettore con elementi random int
-void riempi_vettore_random_int(int v[], int len, int min, int max)
+//**GESTIONE DEL VETTORE** (nota: n è la lunghezza logica del vettore mentre len quella fisica)
+
+//settare dimensione massima del vettore
+void setDimensioneMax(int x)
 {
-	for (int i=0; i<len; i++)
+	dim_max = x;
+}
+
+//creazione di un vettore con elementi random int
+void riempiVettoreRandom(int v[], int n)
+{
+	for (int i=0; i<n; i++)
 	{
-		v[i] = random_int(min,max);
+		v[i] = randomNM(random_min, random_max);
 	}
 }
 
 //creazione di un vettore con elementi random float
-void riempi_vettore_random_float(float v[], int len, float min, float max)
+void riempiVettoreRandom(float v[], int n)
 {
-	for (int i=0; i<len; i++)
+	for (int i=0; i<n; i++)
 	{
-		v[i] = random_float(min, max);
+		v[i] = randomNM_float(random_min, random_max);
 	}
 }
 
+//Aggiunge un elemento passato al vettore INT e ritorna true se possibile altrimenti ritorna false
+bool aggiungiElemento(int v[], int n, int x=2)
+{
+	if (n == len)
+	{
+		return false
+	}
+	else()
+	{
+		v[n] = x;
+		return true;
+	}
+}
+
+//Aggiunge un elemento passato al vettore FLOAT e ritorna true se possibile altrimenti ritorna false
+bool aggiungiElemento(int v[], int n, float x=2.2)
+{
+	if (n == len)
+	{
+		return false
+	}
+	else()
+	{
+		v[n] = x;
+		return true
+	}
+}
+
+//elimina un elemento dal vettore int
+void rimuoviElemento(int v[], int n, int pos)
+{
+	for (int i=pos; i<n; i++)
+	{
+		v[i] = v[i+1];
+	}
+	v[n-1] = 0;
+}
+
+//elimina un elemento dal vettore float
+void rimuoviElemento(float v[], int n, int pos)
+{
+	for (int i=pos; i<n; i++)
+	{
+		v[i] = v[i+1];
+	}
+	v[n-1] = 0;
+}
+
+//**STAMPA DEL VETTORE**
+
 //stampa il vettore di int
-void stampa_vettore_int(int v[], int len)
+void stampaVettore(int v[], int n)
 {
 	cout << "\n" << "Il tuo vetore INT: [";
-	for (int i=0; i<len; i++)
+	for (int i=0; i<n; i++)
 	{
 		cout << " " << v[i] << ",";
 	}
@@ -62,86 +214,206 @@ void stampa_vettore_int(int v[], int len)
 }
 
 //stampa il vettore di float
-void stampa_vettore_float(float v[], int len)
+void stampaVettore(float v[], int n)
 {
 	cout << "\n" << "Il tuo vetore Float: [";
-	for (int i=0; i<len; i++)
+	for (int i=0; i<n; i++)
 	{
 		cout << " " << v[i] << ",";
 	}
 	cout << "]" << endl;
 }
 
+//**ALGORITMI DEI VETTORI**
+
 //ordinamento ingenuo di un vettore di int
-void ordinamento_ingenuo_int(int v[], int len)
+void ordinamentoIngenuo(int v[], int n, bool inverso=false)
 {
-	cout << "\nOrdino ingenuamente il vettore..." << endl;
-	for (int i=0; i<len-1; i++)
+	if (inverso == false)
 	{
-		for (int j=i+1; j<len; j++)
+		for (int i=0; i<n-1; i++)
 		{
-			if (v[i]>v[j])
-				scambia_int(v[i], v[j]);
+			for (int j=i+1; j<n; j++)
+			{
+				if (v[i]>v[j])
+					scambia_int(v[i], v[j]);
+			}
 		}
 	}
+	else()
+		for (int i=0; i<n-1; i++)
+		{
+			for (int j=i+1; j<n; j++)
+			{
+				if (v[i]<v[j])
+					scambia_int(v[i], v[j]);
+			}
+		}
 }
 
 //ordinamento ingenuo di un vettore di float
-void ordinamento_ingenuo_float(float v[], int len)
+void ordinamentoIngenuo(float v[], int n, bool inverso=false)
 {
-	cout << "\nOrdino ingenuamente il vettore..." << endl;
-	for (int i=0; i<len-1; i++)
+	if (inverso == false)
 	{
-		for (int j=i+1; j<len; j++)
+		for (int i=0; i<n-1; i++)
 		{
-			if (v[i]>v[j])
-				scambia_float(v[i], v[j]);
+			for (int j=i+1; j<n; j++)
+			{
+				if (v[i]>v[j])
+					scambia_float(v[i], v[j]);
+			}
+		}
+	}
+	else()
+	{
+		for (int i=0; i<n-1; i++)
+		{
+			for (int j=i+1; j<n; j++)
+			{
+				if (v[i]<v[j])
+					scambia_float(v[i], v[j]);
+			}
 		}
 	}
 }
 
 //Ordinamento per bubbleSort con SENTINELLA di int
-void bubbleSort_int(int v[], int len) 
+void bubbleSort(int v[], int n, bool inverso=false) 
 { 
-   cout << "\nOrdino il vettore con Bubble Sort..." << endl;
-   bool ordinato; 
-   do { 
-     ordinato = false; 
-     for (int i = 0; i < len-1; i++) 
-     { 
-        if (v[i] > v[i+1]) 
-        { 
-           scambia_int(v[i], v[i+1]); 
-           ordinato = true; 
-        } 
-     } 
-  
-   }while(ordinato==true);
+   if (inverso == false)
+   {
+	   bool ordinato; 
+	   do { 
+	     ordinato = false; 
+	     for (int i = 0; i < n-1; i++) 
+	     { 
+	        if (v[i]>v[i+1]) 
+	        { 
+	           scambia_int(v[i], v[i+1]); 
+	           ordinato = true; 
+	        } 
+	     } 
+	  
+	   }while(ordinato==true);
+	}
+   else
+   {
+	   bool ordinato; 
+	   do { 
+	     ordinato = false; 
+	     for (int i = 0; i < n-1; i++) 
+	     { 
+	        if (v[i]<v[i+1]) 
+	        { 
+	           scambia_int(v[i], v[i+1]); 
+	           ordinato = true; 
+	        } 
+	     } 
+	  
+	   }while(ordinato==true);
+	}
 }
 
 //Ordinamento per bubbleSort con SENTINELLA di float
-void bubbleSort_float(float v[], int len) 
+void bubbleSort(float v[], int n, bool inverso=false) 
 { 
-   cout << "\nOrdino il vettore con Bubble Sort..." << endl;
-   bool ordinato; 
-   do { 
-     ordinato = false; 
-     for (int i = 0; i < len-1; i++) 
-     { 
-        if (v[i] > v[i+1]) 
-        { 
-           scambia_float(v[i], v[i+1]); 
-           ordinato = true; 
-        } 
-     } 
-  
-   }while(ordinato==true);
+   if (inverso == false)
+   {
+	   bool ordinato; 
+	   do { 
+	     ordinato = false; 
+	     for (int i = 0; i < n-1; i++) 
+	     { 
+	        if (v[i]>v[i+1]) 
+	        { 
+	           scambia_float(v[i], v[i+1]); 
+	           ordinato = true; 
+	        } 
+	     } 
+	  
+	   }while(ordinato==true);
+	}
+   else
+   {
+	   bool ordinato; 
+	   do { 
+	     ordinato = false; 
+	     for (int i = 0; i < n-1; i++) 
+	     { 
+	        if (v[i]<v[i+1]) 
+	        { 
+	           scambia_float(v[i], v[i+1]); 
+	           ordinato = true; 
+	        } 
+	     } 
+	  
+	   }while(ordinato==true);
+	}
 }
 
-// ricerca elemento all'interno di un vettore di int
-bool ricerca_binaria_int(int v[], int elemento, int len)
+//**FUNZIONI SU ARRAY**
+
+//somma tutti gli elementi del vettore int
+int sommaVettore(int v[], int n)
 {
-	int count=1, i=0, f=len-1, m;
+	int somma=0;
+	for (int i=0; i<n; i++)
+	{
+		somma += v[i];
+	}
+	return somma;
+}
+
+//somma tutti gli elementi del vettore float
+float sommaVettore(float v[], int n)
+{
+	float somma=0;
+	for (int i=0; i<n; i++)
+	{
+		somma += v[i];
+	}
+	return somma;
+}
+
+//restituisce la media degli elementi del vettore int
+float media(int v[], int n)
+{
+	int somma = sommaVettore(v, n)
+	return (float)somma/n;
+}
+
+//restituisce la media degli elementi del vettore float
+float media(float v[], int n)
+{
+	float somma = sommaVettore(v, n)
+	return somma/n;
+}
+
+//gira al contrario un vettore di int
+void inverti(int v[], int n)
+{
+	int mezzo=n/2;
+	for (int i=0; i<mezzo; i++)
+	{
+		scambia_int(v[i], v[n-i-1]);
+	}
+}
+
+// gira al contarrio un vettore di float
+void inverti(float v[], int n)
+{
+	int mezzo=n/2;
+	for (int i=0; i<mezzo; i++)
+	{
+		scambia_float(v[i], v[n-i-1]);
+	}
+}
+
+// ricerca elemento all'interno di un vettore di INT ordinato
+bool ricercaBinaria(int v[], int n, int elemento)
+{
+	int count=1, i=0, f=n-1, m;
 	while(i<=f)
 	{
 		m = (i+f)/2;
@@ -161,10 +433,10 @@ bool ricerca_binaria_int(int v[], int elemento, int len)
 	return false;
 }
 
-// ricerca elemento all'interno di un vettore di float
-bool ricerca_binaria_float(float v[], float elemento, int len)
+// ricerca elemento all'interno di un vettore di FLOAT ordinato
+bool ricercaBinaria(float v[], int n, float elemento)
 {
-	int count=1, i=0, f=len-1, m;
+	int count=1, i=0, f=n-1, m;
 	while(i<=f)
 	{
 		m = (i+f)/2;
@@ -182,13 +454,63 @@ bool ricerca_binaria_float(float v[], float elemento, int len)
 	
 	cout << "Il numero " << elemento << " NON viene trovato nel vettore" << endl;
 	return false;
+}
+
+// restituisce l'indice dell'elemento INT se presente altrimenti restituisce -1
+int presente(int v[], int n, int elem)
+{
+	for (int i=0; i<n; i++)
+	{
+		if (v[i]==elem)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+// restituisce l'indice dell'elemento FLOAT se presente altrimenti restituisce -1
+int presente(float v[], float n, float elem)
+{
+	for (int i=0; i<n; i++)
+	{
+		if (v[i]==elem)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
 
 //resituisce il numero maggiore di un vettore int
-int vmaggiore_int(int v[], int len)
+int minore(int v[], int n)
+{
+	int vmin=v[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (v[i]<vmin)
+			vmin = v[i];
+	}
+	return vmin;
+}
+
+//resituisce il numero maggiore di un vettore float
+float minore(float v[], int n)
+{
+	float vmin=v[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (v[i]<vmin)
+			vmin = v[i];
+	}
+	return vmin;
+}
+
+//resituisce il numero maggiore di un vettore int
+int maggiore(int v[], int n)
 {
 	int vmax=v[0];
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]>vmax)
 			vmax = v[i];
@@ -197,10 +519,10 @@ int vmaggiore_int(int v[], int len)
 }
 
 //resituisce il numero maggiore di un vettore float
-float vmaggiore_float(float v[], int len)
+float maggiore(float v[], int n)
 {
 	float vmax=v[0];
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]>vmax)
 			vmax = v[i];
@@ -209,10 +531,10 @@ float vmaggiore_float(float v[], int len)
 }
 
 //resituisce l'indice del numero maggiore di un vettore int
-int index_vmaggiore_int(int v[], int len)
+int posizioneMaggiore(int v[], int n)
 {
 	int vmax=v[0], index=0;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]>vmax)
 		{
@@ -224,11 +546,11 @@ int index_vmaggiore_int(int v[], int len)
 }
 
 //resituisce l'indice del numero maggiore di un vettore float
-float index_vmaggiore_float(float v[], int len)
+float posizioneMaggiore(float v[], int n)
 {
 	float vmax=v[0];
 	int index=0;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]>vmax)
 		{
@@ -239,35 +561,11 @@ float index_vmaggiore_float(float v[], int len)
 	return index;
 }
 
-//resituisce il numero maggiore di un vettore int
-int vminore_int(int v[], int len)
-{
-	int vmin=v[0];
-	for (int i = 0; i < len; i++)
-	{
-		if (v[i]<vmin)
-			vmin = v[i];
-	}
-	return vmin;
-}
-
-//resituisce il numero maggiore di un vettore float
-float vminore_float(float v[], int len)
-{
-	float vmin=v[0];
-	for (int i = 0; i < len; i++)
-	{
-		if (v[i]<vmin)
-			vmin = v[i];
-	}
-	return vmin;
-}
-
 //resituisce l'indice del numero minore di un vettore int
-int index_vminore_int(int v[], int len)
+int posizioneMinore(int v[], int n)
 {
 	int vmin=v[0], index=0;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]<vmin)
 		{
@@ -279,11 +577,11 @@ int index_vminore_int(int v[], int len)
 }
 
 //resituisce l'indice del numero minore di un vettore float
-float index_vminore_float(float v[], int len)
+float posizioneMinore(float v[], int n)
 {
 	float vmin=v[0];
 	int index=0;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (v[i]<vmin)
 		{
@@ -292,95 +590,4 @@ float index_vminore_float(float v[], int len)
 		}
 	}
 	return index;
-}
-
-//restituisce la media degli elementi del vettore int
-int vmedia_int(int v[], int len)
-{
-	int somma=0;
-	for (int i=0; i<len; i++)
-	{
-		somma += v[i];
-	}
-	return somma/len;
-}
-
-//restituisce la media degli elementi del vettore int
-float vmedia_float(float v[], int len)
-{
-	float somma=0;
-	for (int i=0; i<len; i++)
-	{
-		somma += v[i];
-	}
-	return somma/len;
-}
-
-int ricerca_int(int v[], int find, int len)
-{
-	for (int i=0; i<len; i++)
-	{
-		if (v[i]==find)
-		{
-			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
-			return i;
-		}
-	}
-		cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
-}
-
-int ricerca_float(float v[], float find, int len)
-{
-	for (int i=0; i<len; i++)
-	{
-		if (v[i]==find)
-		{
-			cout << "L'elemento " << find << " trovato in " << i+1 << " passaggi" << endl;
-			return i;
-		}
-	}
-	
-	cout << "L'elemento " << find << " NON viene trovato nel vettore" << endl;
-}
-
-// gira al contrario un vettore di int
-void reverse_int(int v[], int len)
-{
-	int mezzo=len/2;
-	for (int i=0; i<mezzo; i++)
-	{
-		scambia_int(v[i], v[len-i-1]);
-	}
-}
-
-// gira al contarrio un vettore di float
-void reverse_float(float v[], int len)
-{
-	int mezzo=len/2;
-	for (int i=0; i<mezzo; i++)
-	{
-		scambia_float(v[i], v[len-i-1]);
-	}
-}
-
-// elimina un elemento dal vettore int
-void elimina_int(int v[], int elem, int len)
-{
-	int index = ricerca_int(v, elem, len);
-	for (int i=index; i<len; i++)
-	{
-		v[i]=v[i+1];
-	}
-	v[len-1]=0;
-}
-
-// elimina un elemento dal vettore float
-void elimina_float(float v[], float elem, int len)
-{
-	int index = ricerca_float(v, elem, len);
-	for (int i=index; i<len; i++)
-	{
-		v[i]=v[i+1];
-	}
-	v[len-1]=0;
 }
