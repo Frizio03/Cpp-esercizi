@@ -12,9 +12,9 @@ float random0N_float(int n);
 void setRandomMin(int min);
 void setRandomMax(int max);
 //Gestione vettore:
-void setDimensioneMax(int x)
-void riempiVettore(int v[], int n);
-void riempiVettore(float v[], int n);
+void setDimensioneMax(int x);
+//void riempiVettore(int v[], int n);
+//void riempiVettore(float v[], int n);
 void riempiVettoreRandom(int v[], int n);
 void riempiVettoreRandom(float v[], int n);
 bool aggiungiElemento(int v[], int n, int x);
@@ -36,22 +36,22 @@ float media(int v[], int n);
 float media(float v[], int n);
 void inverti(int v[], int n);
 void inverti(float v[], int n);
-bool ricercaBinaria(int v[], int n, int x);
-bool ricercaBinaria(float v[], int n, int x);
+bool ricercaBinaria(int v[], int n, int elemento);
+bool ricercaBinaria(float v[], int n, float elemento);
 int presente(int v[], int n, int x);
 int presente(float v[], int n, float x);
-int minore(int v[], int n)
-float minore(float v[], int n)
-int maggiore(int v[], int n)
-float maggiore(float v[], int n)
-int posizioneMinore(int v[], int n)
-int posizioneMinore(float v[], int n)
-int posizioneMaggiore(int v[], int n)
-int posizioneMaggiore(float v[], int n)
+int minore(int v[], int n);
+float minore(float v[], int n);
+int maggiore(int v[], int n);
+float maggiore(float v[], int n);
+int posizioneMinore(int v[], int n);
+int posizioneMinore(float v[], int n);
+int posizioneMaggiore(int v[], int n);
+int posizioneMaggiore(float v[], int n);
 
 //DEFINIZIONE VARIABILI
 bool random_inizializzato = false;
-int random_min = 0; random_max = 100, len = 1000;
+int random_min = 0, random_max = 100, len = 1000;
 
 //**GESTIONE DEL RANDOM**
 
@@ -77,14 +77,16 @@ int random0N(int n)
 }
 
 //funzione random da 0 a max
-float randomo0N_float(int n)
+float random0N_float(int n)
 {
 	if (random_inizializzato == false)
 	{
 		srand(time(NULL));
 		random_inizializzato = true;
 	}
-	return (float) (rand() % n) + (rand() % n)/100;
+	int v1 = rand() % n;
+	int v2 = rand() % 99;
+	return (float)v1+((float)v2/100);
 }
 
 //funzione random int tra min e max
@@ -107,7 +109,8 @@ float randomNM_float(int n1, int n2)
 		random_inizializzato = true;
 	}
 	int v1 = rand() % (n1-n2+1)+n1;
-	return (float)v1/100;
+	int v2 = rand() % (0-99+1)+99;
+	return (float)v1+((float)v2/100);
 }
 
 //funzione per scambiare 2 variabili int
@@ -131,7 +134,7 @@ void scambia_float(float &a, float &b)
 //settare dimensione massima del vettore
 void setDimensioneMax(int x)
 {
-	dim_max = x;
+	len = x;
 }
 
 //creazione di un vettore con elementi random int
@@ -157,9 +160,9 @@ bool aggiungiElemento(int v[], int n, int x=2)
 {
 	if (n == len)
 	{
-		return false
+		return false;
 	}
-	else()
+	else
 	{
 		v[n] = x;
 		return true;
@@ -167,16 +170,16 @@ bool aggiungiElemento(int v[], int n, int x=2)
 }
 
 //Aggiunge un elemento passato al vettore FLOAT e ritorna true se possibile altrimenti ritorna false
-bool aggiungiElemento(int v[], int n, float x=2.2)
+bool aggiungiElemento(float v[], int n, float x=2.2)
 {
 	if (n == len)
 	{
-		return false
+		return false;
 	}
-	else()
+	else
 	{
 		v[n] = x;
-		return true
+		return true;
 	}
 }
 
@@ -240,7 +243,7 @@ void ordinamentoIngenuo(int v[], int n, bool inverso=false)
 			}
 		}
 	}
-	else()
+	else
 		for (int i=0; i<n-1; i++)
 		{
 			for (int j=i+1; j<n; j++)
@@ -265,7 +268,7 @@ void ordinamentoIngenuo(float v[], int n, bool inverso=false)
 			}
 		}
 	}
-	else()
+	else
 	{
 		for (int i=0; i<n-1; i++)
 		{
@@ -379,14 +382,14 @@ float sommaVettore(float v[], int n)
 //restituisce la media degli elementi del vettore int
 float media(int v[], int n)
 {
-	int somma = sommaVettore(v, n)
+	int somma = sommaVettore(v, n);
 	return (float)somma/n;
 }
 
 //restituisce la media degli elementi del vettore float
 float media(float v[], int n)
 {
-	float somma = sommaVettore(v, n)
+	float somma = sommaVettore(v, n);
 	return somma/n;
 }
 
@@ -470,7 +473,7 @@ int presente(int v[], int n, int elem)
 }
 
 // restituisce l'indice dell'elemento FLOAT se presente altrimenti restituisce -1
-int presente(float v[], float n, float elem)
+int presente(float v[], int n, float elem)
 {
 	for (int i=0; i<n; i++)
 	{
@@ -546,7 +549,7 @@ int posizioneMaggiore(int v[], int n)
 }
 
 //resituisce l'indice del numero maggiore di un vettore float
-float posizioneMaggiore(float v[], int n)
+int posizioneMaggiore(float v[], int n)
 {
 	float vmax=v[0];
 	int index=0;
@@ -577,7 +580,7 @@ int posizioneMinore(int v[], int n)
 }
 
 //resituisce l'indice del numero minore di un vettore float
-float posizioneMinore(float v[], int n)
+int posizioneMinore(float v[], int n)
 {
 	float vmin=v[0];
 	int index=0;
