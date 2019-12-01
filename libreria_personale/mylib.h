@@ -13,8 +13,8 @@ void setRandomMin(int min);
 void setRandomMax(int max);
 //Gestione vettore:
 void setDimensioneMax(int x);
-//void riempiVettore(int v[], int n);
-//void riempiVettore(float v[], int n);
+void riempiVettore(int v[], int n);
+void riempiVettore(float v[], int n);
 void riempiVettoreRandom(int v[], int n);
 void riempiVettoreRandom(float v[], int n);
 bool aggiungiElemento(int v[], int n, int x);
@@ -135,6 +135,26 @@ void scambia_float(float &a, float &b)
 void setDimensioneMax(int x)
 {
 	len = x;
+}
+
+void riempiVettore(int v[], int n)
+{
+	for (int i=0; i<n; i++)
+	{
+		cout << "Inserisci elemento INT: ";
+		cin >> v[i];
+		cout << endl;
+	}
+}
+
+void riempiVettore(float v[], int n)
+{
+	for (int i=0; i<n; i++)
+	{
+		cout << "Inserisci elemento FLOAT: ";
+		cin >> v[i];
+		cout << endl;
+	}
 }
 
 //creazione di un vettore con elementi random int

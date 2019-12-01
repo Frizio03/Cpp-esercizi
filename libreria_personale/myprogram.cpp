@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	int n=10, elem=15, VI[n];
+	int n=5, elem=15, VI[n];
 	float elemf=32.32, VF[n];
 	cout << random0N(100) << endl;
 	cout << random0N_float(300);
