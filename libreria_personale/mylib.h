@@ -37,8 +37,8 @@ float media(int v[], int n);
 float media(float v[], int n);
 void inverti(int v[], int n);
 void inverti(float v[], int n);
-bool ricercaBinaria(int v[], int n, int elemento);
-bool ricercaBinaria(float v[], int n, float elemento);
+int ricercaBinaria(int v[], int n, int elemento);
+int ricercaBinaria(float v[], int n, float elemento);
 int presente(int v[], int n, int x);
 int presente(float v[], int n, float x);
 int minore(int v[], int n);
@@ -435,7 +435,7 @@ void inverti(float v[], int n)
 }
 
 // ricerca elemento all'interno di un vettore di INT ordinato
-bool ricercaBinaria(int v[], int n, int elemento)
+int ricercaBinaria(int v[], int n, int elemento)
 {
 	int count=1, i=0, f=n-1, m;
 	while(i<=f)
@@ -448,17 +448,17 @@ bool ricercaBinaria(int v[], int n, int elemento)
 		else if (v[m] == elemento)
 		{
 			cout << "Il numero " << elemento << " trovato in " << count << " passaggi" << endl;
-			return true;
+			return m;
 		}
 		count += 1;
 	}
 	
 	cout << "Il numero " << elemento << " NON viene trovato nel vettore" << endl;
-	return false;
+	return -1;
 }
 
 // ricerca elemento all'interno di un vettore di FLOAT ordinato
-bool ricercaBinaria(float v[], int n, float elemento)
+int ricercaBinaria(float v[], int n, float elemento)
 {
 	int count=1, i=0, f=n-1, m;
 	while(i<=f)
@@ -471,13 +471,13 @@ bool ricercaBinaria(float v[], int n, float elemento)
 		else if (v[m] == elemento)
 		{
 			cout << "Il numero " << elemento << " trovato in " << count << " passaggi" << endl;
-			return true;
+			return m;
 		}
 		count += 1;
 	}
 	
 	cout << "Il numero " << elemento << " NON viene trovato nel vettore" << endl;
-	return false;
+	return -1;
 }
 
 // restituisce l'indice dell'elemento INT se presente altrimenti restituisce -1
