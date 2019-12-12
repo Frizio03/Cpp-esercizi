@@ -5,6 +5,12 @@
   - programma di utilizzo libreria
   - esercitazioni di verifica con libreria
 
+## Esercitazione 1:
+  Menù con le seguenti scelte:
+  0. Uscita
+  1. Riempire Random il vettore
+  2. Stampare il vettore
+
 ## Esercitazione 2:
 
   Settare minimo a 50
