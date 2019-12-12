@@ -1,11 +1,11 @@
-LIBRERIA_PERSONALE
+# LIBRERIA_PERSONALE
 
-In questa cartella trovi:
+## In questa cartella trovi:
   - libreria per operare con vettori in c++
   - programma di utilizzo libreria
   - esercitazioni di verifica con libreria
 
-ESERCITAZIONE 2:
+## Esercitazione 2:
 
   Settare minimo a 50
   Settare massimo a 150
