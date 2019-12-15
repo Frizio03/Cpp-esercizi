@@ -41,6 +41,16 @@ void filtro(float v[], int n)
 	cout << endl;
 }
 
+void posizioneMaggiori(float v[], int n)
+{
+	for (int i=0; i<n; i++)
+	{
+		if (v[i]==maggiore(v, n))
+			cout << "\nLa posizione dell'elemento maggiore è: " << i << " - ";
+	}
+	cout << endl << endl;
+}
+
 void differenza(float v[], int n)
 {
 	for (int i=1; i<n; i++)
@@ -78,7 +88,7 @@ void menu(float vettore[], int n, int scelta)
 				cout << "\nCi sono " << contaValori(vettore, n) << " valori compresi fra 6000 e 7000 inclusi\n" << endl;
 				break;
 			case 5:
-				cout << "\nLa posizione dell'elemento maggiore è: " << posizioneMaggiore(vettore, n) << endl << endl;
+				posizioneMaggiori(vettore, n);
 				break;
 			case 6:
 				filtro(vettore, n);
