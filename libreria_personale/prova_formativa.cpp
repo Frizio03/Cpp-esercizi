@@ -111,8 +111,15 @@ int main()
 	float vettore[len];
 	setRandomMin(1000);
 	setRandomMax(10000);
-	cout << "Inserire dimensione del vettore: ";
-	cin >> n;
+	do{	
+		cout << "Inserire dimensione del vettore: ";
+		cin >> n;
+		if(n<0)
+		{
+			cout << "Il vettore non può essere negativo..." << endl;
+			n=0;
+		}
+	}while(n==0);
 	riempiVettoreRandom(vettore, n);
 	menu(vettore, n, scelta);
 }
