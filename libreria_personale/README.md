@@ -6,12 +6,15 @@
   - esercitazioni di verifica con libreria
 
 ## Esercitazione 1:
+File --> esercizio_con_libreria.cpp
+
   Menù con le seguenti scelte:
   0. Uscita
   1. Riempire Random il vettore
   2. Stampare il vettore
 
 ## Esercitazione 2:
+File --> esercizio_con_libreria_2.cpp
 
   Settare minimo a 50
   Settare massimo a 150
@@ -27,6 +30,7 @@
   7. Visualizzare il vettore, mettendo anche una descrizione a seconda del valore → pari e dispari
 
 ## Prova Formativa
+File --> prova_formativa.cpp
 
 Settare il minimo a 1000 e il massimo a 10000. 
 Creare un vettore random di float di 1000 elementi per contenere una serie di valori di conti correnti.
@@ -40,3 +44,20 @@ Presentare il seguente menù finché l’utente non digita il numero per l’usc
   5. Mostrare il numero (l’indice) del conto con più alto (se ce ne sono di più mostrarli tutti)
   6. Prendere in input un valore H. Mostrare tutti i conti con valori < V[H]
   7. Contare quante volte un conto è maggiore del suo precedente (il primo non è da controllare…)
+
+## Prova di Verifica
+File --> Verifica1612_Tedeschi.cpp
+
+Settare il minimo a 0 e il massimo a 50000. 
+Creare un vettore random di float di 10000 elementi per contenere una serie di valori di conti correnti.
+Prendere in input la numerosità N.
+
+Presentare il seguente menù finché l’utente non digita il numero per l’uscita:
+  1. Uscita
+  2. Mostra vettore
+  3. Diminusci del 5% i conti minori di 30000
+  4. Mostra il credito di singolo conto di indice C preso in input
+  5. Aumenta di un valore V preso in input un conto di indice C preso in input
+  6. Mostra il conto con credito maggiore (se ce ne sono di più mostrarli tutti)
+  7. Dividi i soldi di un conto [di inice C preso in input] equamente su tutti gli altri e azzera il conto C
+  8. Verifica se i crediti sono in ordine crescente
