@@ -1,4 +1,4 @@
-// Verifica C++ 16/125/2019 - Tedeschi Fabrizio
+// Verifica C++ 16/12/2019 - Tedeschi Fabrizio
 #include <iostream>
 #include "libreriaVettori.h"
 
