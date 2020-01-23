@@ -1,4 +1,4 @@
-# consegne
+# Consegne degli esercizi
 
 ## Esercizio 1
 Somma tutti i valori dati.
