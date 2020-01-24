@@ -6,26 +6,21 @@ using namespace std;
 
 // input data
 int N, risultato;
-char C[MAXN], L[MAXN];
+char C[10000], L[0000];
 int i=0, count=0;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/i6", "r", stdin);
-	freopen("output/o6", "w", stdout);
+	freopen("input/9", "r", stdin);
+	freopen("output/9", "w", stdout);
     
     while(scanf("%c", &C[i])>0)
     {
-    	if(C[i]!="a" || C[i]!="e" || C[i]!="i" || C[i]!="o" || C[i]!="u" || C[i]!="y")
+		if(int(C[i])!=32)
     	{
-    		L[count] = C[i];
-    		count++;
-		}
-		i++; 
+    		i++;
+		} 
 	}
 	
-	for(i=0; i<count; i++)
-	{
-		printf("%c", L[i])
-	}
+	printf("%d", i);
 }
