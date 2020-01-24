@@ -5,8 +5,7 @@
 using namespace std;
 
 // input data
-int N, risultato;
-string C[10000];
+string C[10000], L[10000];
 int i=0, count=0;
 
 int main() {
@@ -14,16 +13,26 @@ int main() {
 	freopen("input/15", "r", stdin);
 	freopen("output/15", "w", stdout);
     
-    //metto i valori della stringa in un vettore fino a quando scanf trova dei caratteri e restituisce 1
-    while(scanf("%s", &C[count])>0)
+    //metto ogni riga nella variabile fino a quando ce ne sono
+    while(getline(cin, C[i])>0)
     {
-		count++; 
+		if(int(C[i][1])!=47)
+		{
+			L[count] = C[i];
+			count++;
+		}
+		else
+		{
+			if(int(C[i][0])!=47)
+			{
+				L[count] = C[i];
+				count++;
+			}
+		}
+		i++;
 	}
 	
 	//stampa dell'output su file
 	for(i=0; i<count; i++)
-	{
-		cout << C[i] << endl;
-		//printf("%s", C[i]);
-	}
+		cout << L[i] << endl;
 }

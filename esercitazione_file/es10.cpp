@@ -5,8 +5,7 @@
 using namespace std;
 
 // input data
-int N, risultato;
-char C[10000], L[10000];
+string C;
 int i=0, count=0;
 
 int main() {
@@ -14,10 +13,9 @@ int main() {
 	freopen("input/10", "r", stdin);
 	freopen("output/10", "w", stdout);
     
-    //metto i valori della stringa in un vettore fino a quando scanf trova dei caratteri e restituisce 1
-    while(scanf("%s", &C[i])>0)
+    //metto ogni riga nella variabile fino a quando ce ne sono
+    while(getline(cin, C)>0)
     {
-		if()
 		count++;
 	}
 	
