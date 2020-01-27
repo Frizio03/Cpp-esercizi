@@ -4,9 +4,19 @@
 // input data
 int N, risultato;
 
+bool primo(int n)
+{
+	for(int j=2; j<n; j++)
+	{
+		if(n%j==0)
+			return false;
+	}
+	return true;
+}
+
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/11", "r", stdin);
+	freopen("input/i11", "r", stdin);
 	freopen("output/11", "w", stdout);
 
 	//input valori da file
@@ -18,7 +28,7 @@ int main() {
     //programma es tampa del risultato con aggiunta di " " dopo ogni numero
     for(int i=0; i<N; i++)
     {
-    	if(L[i]%2==0)
+		if(primo(L[i])==true)
 			printf("%d ", 1);
 		else
 			printf("%d ", 0);
