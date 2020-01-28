@@ -66,14 +66,14 @@ Output: la somma di tutti i valori (non delle numerosità)
 Input: valore N seguito da N triple di numeri
 Output: lista di N valori, contenente la media delle varie triple troncato ad un valore intero
 
-##Esercizio 16
+## Esercizio 16
 Input: valore N e una lista L di N numeri
 Output: il numero di volte in cui compare un valore multiplo di 5
 
-##Esercizio 17
+## Esercizio 17
 Input: valore N e una lista L di 5N numeri da leggere a gruppi di 5 (a, b, c, d,e)
 Output: lista di N valori corrispondenti a “a*b - c*d + e”
 
-##Esercizio 18
+## Esercizio 18
 Input: valore N seguito da N righe contenenti ciascuna una lista composta da N elementi
 Output: lista di N elementi composta dalla somma di ogni riga
