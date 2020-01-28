@@ -16,8 +16,8 @@ bool primo(int n)
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/i11", "r", stdin);
-	freopen("output/11", "w", stdout);
+	freopen("input/8", "r", stdin);
+	freopen("output/8", "w", stdout);
 
 	//input valori da file
     assert(1 == scanf("%d", &N));

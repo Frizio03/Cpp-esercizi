@@ -1,30 +1,29 @@
 #include <stdio.h>
 #include <assert.h>
 
+// constraints
+#define MAXN 100000
+
 // input data
-int N, risultato;
+int N, R;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/2", "r", stdin);
-	freopen("output/2", "w", stdout);
+	freopen("input/11", "r", stdin);
+	freopen("output/11", "w", stdout);
 
-	//input valori da file
+	//input da file
     assert(1 == scanf("%d", &N));
     int C[N];
     for(int i=0; i<N; i++)
         assert(1 == scanf("%d", &C[i]));
     
     //programma
-    for(int i=0; i<N; i++)
+    for(int i=1; i<N; i++)
     {
-    	if(C[i]%2==0)
-    		C[i] += 1;
-    	else
-    		C[i] -= 1;
+    	R = C[i-1] + C[i];
+		//output su file
+		printf("%d ", R);
 	}
-	
-    //Stampa del risultato sul file output
-    for(int i=0; i<N; i++)
-		printf("%d ", C[i]);
+		
 }

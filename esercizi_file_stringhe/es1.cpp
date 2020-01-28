@@ -11,8 +11,8 @@ int i=0, count=0;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/6", "r", stdin);
-	freopen("output/6", "w", stdout);
+	freopen("input/1", "r", stdin);
+	freopen("output/1", "w", stdout);
     
     //metto i valori della stringa in un vettore fino a quando scanf trova dei caratteri e restituisce 1
     while(scanf("%c", &C[i])>0)

@@ -9,8 +9,8 @@ int N, a=0, b=0, c=0, somma=0;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/5", "r", stdin);
-	freopen("output/5", "w", stdout);
+	freopen("input/15", "r", stdin);
+	freopen("output/15", "w", stdout);
 
 	//input da file
     assert(1 == scanf("%d", &N));

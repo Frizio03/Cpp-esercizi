@@ -10,8 +10,8 @@ int i=0, count=0;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/10", "r", stdin);
-	freopen("output/10", "w", stdout);
+	freopen("input/3", "r", stdin);
+	freopen("output/3", "w", stdout);
     
     //metto ogni riga nella variabile fino a quando ce ne sono
     while(getline(cin, C)>0)

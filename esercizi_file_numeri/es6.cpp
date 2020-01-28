@@ -2,15 +2,14 @@
 #include <assert.h>
 
 // input data
-int N, K, risultato=1;
-
+int N, K, somma, count=0, risultato;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/8", "r", stdin);
-	freopen("output/8", "w", stdout);
+	freopen("input/6", "r", stdin);
+	freopen("output/6", "w", stdout);
 	
-	//input variabili da file
+	//input di valori da file e dichiarazione vettore L
     assert(2 == scanf("%d %d", &N, &K));
     int L[N];
 	for(int i=0; i<N; i++)
@@ -19,9 +18,14 @@ int main() {
     //programma
     for(int i=0; i<N; i++)
     {
-    	if(L[i]!=0 && L[i]!=K)
-			risultato = risultato * L[i];
+    	if(L[i]>=K)
+    	{
+			somma += L[i];
+			count +=1;
+		}
 	}
+    
+    risultato = somma/count;
     
     //Stampa del risultato sul file output
     printf("%d\n", risultato);

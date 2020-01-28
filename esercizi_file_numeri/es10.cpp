@@ -1,16 +1,13 @@
 #include <stdio.h>
 #include <assert.h>
-#include <iostream>
-
-using namespace std;
 
 // input data
 int N;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/12", "r", stdin);
-	freopen("output/12", "w", stdout);
+	freopen("input/10", "r", stdin);
+	freopen("output/10", "w", stdout);
 
 	//input valori da file
     assert(1 == scanf("%d", &N));
@@ -18,14 +15,9 @@ int main() {
     for(int i=0; i<N; i++)
         assert(1 == scanf("%d", &L[i]));
     
-    //programma e stampa dei valori
-	for(int i=0; i<N; i++)
-	{
-		for(int j=1; j<=L[i]; j++)
-		{
-			if(L[i]%j==0)
-				cout << j << " ";
-		}
-		cout << endl;
-	}
+    //programma e stampa dei risultati
+    for(int i=0; i<N; i++)
+    {
+    	printf("%d ", L[i]*L[i]);
+	} 
 }

@@ -6,8 +6,8 @@ int N, R;
 
 int main() {
 	//Apertura dei file necessari impostandoli come standard input e standard output
-	freopen("input/3", "r", stdin);
-	freopen("output/3", "w", stdout);
+	freopen("input/13", "r", stdin);
+	freopen("output/13", "w", stdout);
 	
 	//input valori da file
     assert(1 == scanf("%d", &N));
