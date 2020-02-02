@@ -19,6 +19,6 @@ Output: numero di volte in cui compare la parola 'abemus'
 Input: testo
 Output: eliminare le righe che iniziano con //
 
-##Esercizio 6
+## Esercizio 6
 Input: un testo
 Output: ogni vocale deve essere trasformata in * (in questo caso "y" non viene considerata vocale)
