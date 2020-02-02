@@ -31,9 +31,9 @@ Output: la mappa rappresentata con [ ] dove il giocatre non è passato e con [-]
 
 Esempio:
 
-*Input*:
-5 5 0 0 4
-S E E N
+*Input*:\n
+5 5 0 0 4\n
+S E E N\n
 
 *Output*
 [+][ ][-][ ][ ]
