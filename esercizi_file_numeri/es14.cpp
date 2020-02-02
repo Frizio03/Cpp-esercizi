@@ -11,7 +11,7 @@ int main() {
 
 	//input da file
     assert(1 == scanf("%d", &N));
-    int R;
+    int R=0;
     for(int i=0; i<N; i++)
 	{
     	assert(1 == scanf("%d", &M));
