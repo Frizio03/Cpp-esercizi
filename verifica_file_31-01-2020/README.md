@@ -20,6 +20,7 @@ Output: quante volte un valore è maggiore del suo precedente (partendo dal seco
 ## Esercizio 5
 
 Input: W, H, X, Y, N, ...D
+
 	- W --> larghezza della mappa
 	- H --> altezza della mappa
 	- (X ; Y) --> posizione di partenza del giocatore
@@ -29,12 +30,12 @@ Input: W, H, X, Y, N, ...D
 Output: la mappa rappresentata con [ ] dove il giocatre non è passato e con [-] dove il giocatore è passato
 
 Esempio:
+
 *Input*:
 5 5 0 0 4
 S E E N
 
-*Output*:
-
+*Output*
 [+][ ][-][ ][ ]
 [-][-][-][ ][ ]
 [ ][ ][ ][ ][ ]
