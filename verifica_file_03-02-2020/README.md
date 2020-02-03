@@ -1,6 +1,8 @@
 # Consegne esercizi
 
-Risulvere gli esercizi è controllare avviando correttore.exe
+## Istruzioni
+
+Risulvere gli esercizi è controllare se il risultato stampato è uguale a quello dell'esempio dopo aver impostato la variabile test = true
 
 ## Esercizio 1
 Input: valore N e una lista L di N numeri
@@ -14,8 +16,6 @@ Output: numero di valori della lista multipli di K
 Input: valore N seguito da una lista di N coppie rappresentanti delle coordinate
 Output: la distanza (calcolata dall'origine) maggiore tra tutti i punti [troncato ad un intero]
 [la distanza di un punto (x, y) dall’origine si calcola come sqrt( x^2 + y^2 )]
-
-NOTA: il correttore di es. 3 non funziona quindi osservare se il risultato sul terminale è =15
 
 ## Esercizio 4
 Input: valore N seguito da una lista di N quintuple (5 valori consecutivi a b c d e)
