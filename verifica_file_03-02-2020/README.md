@@ -2,7 +2,8 @@
 
 ## Istruzioni
 
-Risulvere gli esercizi è controllare se il risultato stampato è uguale a quello dell'esempio dopo aver impostato la variabile test = true
+Risulvere gli esercizi è controllare se il risultato stampato è uguale a quello dell'esempio dopo aver impostato la variabile 
+test = true
 
 ## Esercizio 1
 Input: valore N e una lista L di N numeri
